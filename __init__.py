@@ -1,6 +1,6 @@
 import sys
-
 import pygame.image #导入pygame图片模块
+import json
 class Card: #定义卡片类
     def __init__(self,img,x,y): #设置工具
         self.img=img
@@ -43,3 +43,44 @@ def Menu():
                 pygame.quit()
                 sys.exit()
                 return
+def image_loads():
+    bg1 = pygame.image.load(r'.\image\background1.jpg')
+class Users:
+    global login_bool
+    def __init__(self,user_name,password):
+        self.user_name=user_name
+        self.password=password
+    def login(self,user_name,password):
+        json_path = r'User.json'
+        num=open(r'UserCount.','w+',encoding="UTF-8")
+        assert os.path.exists(json_path), "file: '{}' dose not exist.".format(json_path)
+        json_file = open('User.json', 'a+', encoding="UTF-8")
+        json_lib = dict(json.load(json_file))#将json文件转换为字典类型
+        for i in range(0,num,1):
+            if user_name==json_lib["user_"+str(num)]["name"] and \
+                password == json_lib["user_"+str(num)]["password"]:
+                login_bool=True
+            else:
+                login_bool=False
+    def register(self,user_name,password):
+        num = open(r'UserCount.', 'w+', encoding="UTF-8")
+        json_path=r'User.json'
+        json_file=open('User.json','a+',encoding="UTF-8")
+        for i in range(0, num, 1):
+            if user_name == json_lib["user_" + str(num)]["name"] and \
+                    password == json_lib["user_" + str(num)]["password"]:
+                register_bool=False
+            else:
+                register_bool = True
+        if register_bool:
+            json_file.write(
+                """
+                "user_%d"{
+                "name":%s,
+                "password":%s,
+                }
+                """%(int(num.read())+1,user_name,password)
+            )
+            num.write(num.read()+1)
+        else:
+            return
