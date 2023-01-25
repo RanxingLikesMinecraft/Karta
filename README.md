@@ -27,4 +27,4 @@ from "Self-encouragement Couplet" by Pu Songling.\
 # Join us 加入我们
 QQ:    77734470\
 \
-WeChat: mcmcmod
+WeChat: mcmcmod\
