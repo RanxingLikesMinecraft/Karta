@@ -1,3 +1,5 @@
+import sys
+
 import pygame.image #导入pygame图片模块
 class Card: #定义卡片类
     def __init__(self,img,x,y): #设置工具
@@ -21,3 +23,23 @@ class Card_Package: #定义卡片仓库
             screen.blit(img,(x,y)) #显示卡片在(x,y)
             x+=#卡牌的距离(左右)+卡牌的x长度
 @Card_Package#对Card_Package函数使用装饰器
+class Person:
+    def __init__(self,img,x,y):
+        self.img=img
+        self.x=x
+        self.y=y
+    def write(self,img,x,y):
+        screen.blit(pygame.image.load(img),(x,y))
+def Menu():
+    while True:
+        for event in pygame.event.get():
+            if event.type==pygame.MOUSEBUTTONDOWN:
+                x,y=pygame.mouse.get_pos()
+                if
+                elif
+            elif event.type==pygame.KEYDOWN and event.key==pygame.K_ESCAPE:
+                return
+            elif event.type==pygame.QUIT:
+                pygame.quit()
+                sys.exit()
+                return
