@@ -25,5 +25,6 @@ Three thousand of Yue Army could conquer Wu." \
 from "Self-encouragement Couplet" by Pu Songling.\
 选自蒲松龄《自勉联》
 # Join us 加入我们
-QQ:
-WeChat:
+QQ:    77734470\
+\
+WeChat: mcmcmod
