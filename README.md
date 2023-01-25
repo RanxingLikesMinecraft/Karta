@@ -1,7 +1,7 @@
 # Karta
 A card game but not complete yet.\
 一个尚未完成的游戏
-# About us 关于我们 
+# About Diamenty 关于Diamenty团队 
 We are just some student in Grade Seven with some whimsical ideas.\
 我们只是一些有着异想天开想法的七年级学生\
 We are all from China.\
