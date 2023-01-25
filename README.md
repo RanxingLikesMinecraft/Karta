@@ -1,7 +1,7 @@
 # Karta
 A card game but not complete yet.\
 一个尚未完成的游戏
-# About us 关于我们
+# About us 关于我们 
 We are just some student in Grade Seven with some whimsical ideas.\
 我们只是一些有着异想天开想法的七年级学生\
 We are all from China.\
@@ -25,3 +25,4 @@ Three thousand of Yue Army could conquer Wu." \
 from "Self-encouragement Couplet" by Pu Songling.\
 选自蒲松龄《自勉联》
 # Join us 加入我们
+Phone : +86 
