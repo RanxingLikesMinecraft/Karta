@@ -23,57 +23,61 @@ class Card_Package: #定义卡片仓库
             screen.blit(img,(x,y)) #显示卡片在(x,y)
             x+=#卡牌的距离(左右)+卡牌的x长度
 @Card_Package#对Card_Package函数使用装饰器
-class Person:
-    def __init__(self,img,x,y):
+class Person:#定义角色
+    def __init__(self,img,x,y):#创建构造方法
         self.img=img
         self.x=x
         self.y=y
-    def write(self,img,x,y):
-        screen.blit(pygame.image.load(img),(x,y))
-def Menu():
-    while True:
-        for event in pygame.event.get():
-            if event.type==pygame.MOUSEBUTTONDOWN:
-                x,y=pygame.mouse.get_pos()
+    def write(self,img,x,y):#创建显示图片的方法
+        screen.blit(pygame.image.load(img),(x,y))#在(x,y)的地方显示图片
+def Menu():#菜单
+    while True:#死循环
+        for event in pygame.event.get():#获取事件监听
+            if event.type==pygame.MOUSEBUTTONDOWN:#如果按下鼠标
+                x,y=pygame.mouse.get_pos()#获取鼠标位置
+                "将各个菜单上的按键的位置与鼠标按下的位置进行匹配"
                 if
                 elif
-            elif event.type==pygame.KEYDOWN and event.key==pygame.K_ESCAPE:
-                return
-            elif event.type==pygame.QUIT:
-                pygame.quit()
-                sys.exit()
-                return
-def image_loads():
-    bg1 = pygame.image.load(r'.\image\background1.jpg')
-class Users:
-    global login_bool
-    def __init__(self,user_name,password):
-        self.user_name=user_name
-        self.password=password
-    def login(self,user_name,password):
-        json_path = r'User.json'
-        num=open(r'UserCount.','w+',encoding="UTF-8")
-        assert os.path.exists(json_path), "file: '{}' dose not exist.".format(json_path)
-        json_file = open('User.json', 'a+', encoding="UTF-8")
+            elif event.type==pygame.KEYDOWN and event.key==pygame.K_ESCAPE:#如果按下了esc键
+                return#返回
+            elif event.type==pygame.QUIT:#如果按下了退出
+                pygame.quit()#pygame模块关闭
+                sys.exit()#python系统关闭
+                return#返回
+def image_loads():#创建构建图片的方法
+    bg1 = pygame.image.load(r'.\image\background1.jpg')#创建变量来存储图片，但并不显示图片
+    re_bg=pygame.image.load(r'.\image\register_background.jpg')
+class Users:#创建玩家操作的类
+    global login_bool#声明全局变量login_bool
+    global register_bool#声明全局变量与register_bool
+    def __init__(self,user_name,password):#创建构造方法
+        self.user_name=user_name#玩家姓名
+        self.password=password#登录密码
+    def login(self,user_name,password):#构建登录函数
+        json_path = r'User.json'#获取所有玩家登录信息
+        num=open(r'UserCount.','w+',encoding="UTF-8")#获取登录的总玩家数
+        json_file = open('User.json', 'a+', encoding="UTF-8")#打开玩家信息，用a+模式，UTF-8编码
         json_lib = dict(json.load(json_file))#将json文件转换为字典类型
-        for i in range(0,num,1):
+        for i in range(0,num):#从下表0开始一直到最后一个玩家逐个遍历
             if user_name==json_lib["user_"+str(num)]["name"] and \
-                password == json_lib["user_"+str(num)]["password"]:
-                login_bool=True
-            else:
-                login_bool=False
-    def register(self,user_name,password):
-        num = open(r'UserCount.', 'w+', encoding="UTF-8")
-        json_path=r'User.json'
-        json_file=open('User.json','a+',encoding="UTF-8")
-        for i in range(0, num, 1):
+                password == json_lib["user_"+str(num)]["password"]:#如果输入的玩家姓名与登录密码相匹配
+                login_bool=True#则允许登录
+                return
+        login_bool=False#拒绝登录
+    def register(self,user_name,password):#构建注册函数
+        global re_bg
+        pygame.image.load(re_bg,(0,0))#加载注册界面的背景图片
+        num = open(r'UserCount.', 'w+', encoding="UTF-8")#将玩家总人数的文件以w+模式，UTF-8编码打开
+        json_path=r'User.json'#存储玩家信息的文件的路径
+        json_file=open('User.json','a+',encoding="UTF-8")#以a+模式，UTF-8编码打开存储玩家信息的json文件
+        for i in range(0, num):#从下表0开始逐个遍历玩家信息的字典
             if user_name == json_lib["user_" + str(num)]["name"] and \
-                    password == json_lib["user_" + str(num)]["password"]:
-                register_bool=False
-            else:
-                register_bool = True
-        if register_bool:
-            json_file.write(
+                    password == json_lib["user_" + str(num)]["password"]:#如果有玩家注册信息、注册密码与玩家信息库相匹配
+                register_bool=False#拒绝注册
+                return#返回
+            register_bool = True#允许注册
+        if register_bool:#如果允许注册
+            json_file.write(#将新玩家信息填入json文件中，使用复式字符串，并与使用占位符，最后将玩家总人数+1
                 """
                 "user_%d"{
                 "name":%s,
@@ -81,6 +85,91 @@ class Users:
                 }
                 """%(int(num.read())+1,user_name,password)
             )
-            num.write(num.read()+1)
-        else:
-            return
+            num.write(num.read()+1)#将存储玩家总人数的文件中的整数+1
+        else:#否则
+            "询问玩家是否进入登录界面"
+            Users.login(user_name,password)#将玩家送入登录界面
+            return#返回
+class LO_RE:
+    def __init__(self,user_name,password):
+        self.user_name=user_name
+        self.password=password
+    def Lo_Name():
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_0 or pygame.K_KP0:
+                        user_name.join('0')
+                    elif event.key == pygame.K_1 or pygame.K_KP1:
+                        user_name.join('1')
+                    elif event.key == pygame.K_2 or pygame.K_KP2:
+                        user_name.join('2')
+                    elif event.key == pygame.K_3 or pygame.K_KP3:
+                        user_name.join('3')
+                    elif event.key == pygame.K_4 or pygame.K_KP4:
+                        user_name.join('4')
+                    elif event.key == pygame.K_5 or pygame.K_KP5:
+                        user_name.join('5')
+                    elif event.key == pygame.K_6 or pygame.K_KP6:
+                        user_name.join('6')
+                    elif event.key == pygame.K_7 or pygame.K_KP7:
+                        user_name.join('7')
+                    elif event.key == pygame.K_8 or pygame.K_KP8:
+                        user_name.join('8')
+                    elif event.key == pygame.K_9 or pygame.K_KP9:
+                        user_name.join('9')
+                    elif event.key == pygame.K_q:
+                        user_name.join('q')
+                    elif event.key == pygame.K_w:
+                        user_name.join('w')
+                    elif event.key == pygame.K_e:
+                        user_name.join('e')
+                    elif event.key == pygame.K_r:
+                        user_name.join('r')
+                    elif event.key == pygame.K_t:
+                        user_name.join('t')
+                    elif event.key == pygame.K_y:
+                        user_name.join('y')
+                    elif event.key == pygame.K_u:
+                        user_name.join('u')
+                    elif event.key == pygame.K_i:
+                        user_name.join('i')
+                    elif event.key == pygame.K_o:
+                        user_name.join('o')
+                    elif event.key == pygame.K_p:
+                        user_name.join('p')
+                    elif event.key == pygame.K_a:
+                        user_name.join('a')
+                    elif event.key == pygame.K_s:
+                        user_name.join('s')
+                    elif event.key == pygame.K_d:
+                        user_name.join('d')
+                    elif event.key == pygame.K_f:
+                        user_name.join('f')
+                    elif event.key == pygame.K_g:
+                        user_name.join('g')
+                    elif event.key == pygame.K_h:
+                        user_name.join('h')
+                    elif event.key == pygame.K_j:
+                        user_name.join('j')
+                    elif event.key == pygame.K_k:
+                        user_name.join('k')
+                    elif event.key == pygame.K_l:
+                        user_name.join('l')
+                    elif event.key == pygame.K_z:
+                        user_name.join('z')
+                    elif event.key == pygame.K_x:
+                        user_name.join('x')
+                    elif event.key == pygame.K_c:
+                        user_name.join('c')
+                    elif event.key == pygame.K_v:
+                        user_name.join('v')
+                    elif event.key == pygame.K_b:
+                        user_name.join('b')
+                    elif event.key == pygame.K_n:
+                        user_name.join('n')
+                    elif event.key == pygame.K_m:
+                        user_name.join('m')
+                    elif event.key == pygame.K_UNDERSCORE:
+                        user_name.join('_')
+

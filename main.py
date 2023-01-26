@@ -38,6 +38,8 @@ screen.fill([0,0,0])
 bg_num=0
 login_bool = False
 register_bool=False
+login_str=''
+login_password=''
 def Novice_Tutorial():
     bg=r'.\image\background_Novice_Tutorial.jpg'
     while True:
@@ -51,6 +53,7 @@ def Novice_Tutorial():
                 if event.key==pygame.K_ESCAPE:
                     Menu()
             screen.blit(bg,(0,0))
+
 
 def main():
     global bg_num,bg1
