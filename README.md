@@ -17,4 +17,3 @@ from "Self-encouragement Couplet" by Pu Songling.
 QQ:    77734470\
 \
 WeChat: mcmcmod\
-\
