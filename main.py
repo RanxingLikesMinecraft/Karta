@@ -1,12 +1,11 @@
-import json
 import time
-import os
+
+import cv2
 import pygame
-import sys
 from moviepy.editor import *
 
 from __init__ import *
-import cv2
+
 """
 上面导入模块
 

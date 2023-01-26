@@ -94,29 +94,29 @@ class LO_RE:
     def __init__(self,user_name,password):
         self.user_name=user_name
         self.password=password
-    def Lo_Name():
+    def Lo_Name(self,user_name):
         while True:
             for event in pygame.event.get():
                 if event.type == pygame.KEYDOWN:
-                    if event.key == pygame.K_0 or pygame.K_KP0:
+                    if event.key == pygame.K_0 or event.key == pygame.K_KP0:
                         user_name.join('0')
-                    elif event.key == pygame.K_1 or pygame.K_KP1:
+                    elif event.key == pygame.K_1 or event.key == pygame.K_KP1:
                         user_name.join('1')
-                    elif event.key == pygame.K_2 or pygame.K_KP2:
+                    elif event.key == pygame.K_2 or event.key == pygame.K_KP2:
                         user_name.join('2')
-                    elif event.key == pygame.K_3 or pygame.K_KP3:
+                    elif event.key == pygame.K_3 or event.key == pygame.K_KP3:
                         user_name.join('3')
-                    elif event.key == pygame.K_4 or pygame.K_KP4:
+                    elif event.key == pygame.K_4 or event.key == pygame.K_KP4:
                         user_name.join('4')
-                    elif event.key == pygame.K_5 or pygame.K_KP5:
+                    elif event.key == pygame.K_5 or event.key == pygame.K_KP5:
                         user_name.join('5')
-                    elif event.key == pygame.K_6 or pygame.K_KP6:
+                    elif event.key == pygame.K_6 or event.key == pygame.K_KP6:
                         user_name.join('6')
-                    elif event.key == pygame.K_7 or pygame.K_KP7:
+                    elif event.key == pygame.K_7 or event.key == pygame.K_KP7:
                         user_name.join('7')
-                    elif event.key == pygame.K_8 or pygame.K_KP8:
+                    elif event.key == pygame.K_8 or event.key == pygame.K_KP8:
                         user_name.join('8')
-                    elif event.key == pygame.K_9 or pygame.K_KP9:
+                    elif event.key == pygame.K_9 or event.key == pygame.K_KP9:
                         user_name.join('9')
                     elif event.key == pygame.K_q:
                         user_name.join('q')
@@ -172,4 +172,199 @@ class LO_RE:
                         user_name.join('m')
                     elif event.key == pygame.K_UNDERSCORE:
                         user_name.join('_')
-
+                    elif event.key == pygame.K_q and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('Q')
+                    elif event.key == pygame.K_w and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('W')
+                    elif event.key == pygame.K_e and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('E')
+                    elif event.key == pygame.K_r and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('R')
+                    elif event.key == pygame.K_t and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('T')
+                    elif event.key == pygame.K_y and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('Y')
+                    elif event.key == pygame.K_u and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('U')
+                    elif event.key == pygame.K_i and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('I')
+                    elif event.key == pygame.K_o and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('O')
+                    elif event.key == pygame.K_p and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('P')
+                    elif event.key == pygame.K_a and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('A')
+                    elif event.key == pygame.K_s and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('S')
+                    elif event.key == pygame.K_d and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('D')
+                    elif event.key == pygame.K_f and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('F')
+                    elif event.key == pygame.K_g and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('G')
+                    elif event.key == pygame.K_h and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('H')
+                    elif event.key == pygame.K_j and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('J')
+                    elif event.key == pygame.K_k and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('K')
+                    elif event.key == pygame.K_l and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('L')
+                    elif event.key == pygame.K_z and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('Z')
+                    elif event.key == pygame.K_x and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('X')
+                    elif event.key == pygame.K_c and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('C')
+                    elif event.key == pygame.K_v and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('V')
+                    elif event.key == pygame.K_b and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('B')
+                    elif event.key == pygame.K_n and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('N')
+                    elif event.key == pygame.K_m and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        user_name.join('M')
+                    elif event.key == pygame.K_BACKSPACE:
+                        user_name[-1]=''
+                    elif event.key == pygame.QUIT:
+                        pygame.quit()
+                        sys.exit()
+                    elif event.key == pygame.K_RETURN:
+                        LO_PASSWORD(password)
+    def LO_PASSWORD(self,password):
+        while True:
+            for event in pygame.event.get():
+                if event.type == pygame.KEYDOWN:
+                    if event.key == pygame.K_0 or event.key == pygame.K_KP0:
+                        password.join('0')
+                    elif event.key == pygame.K_1 or event.key == pygame.K_KP1:
+                        password.join('1')
+                    elif event.key == pygame.K_2 or event.key == pygame.K_KP2:
+                        password.join('2')
+                    elif event.key == pygame.K_3 or event.key == pygame.K_KP3:
+                        password.join('3')
+                    elif event.key == pygame.K_4 or event.key == pygame.K_KP4:
+                        password.join('4')
+                    elif event.key == pygame.K_5 or event.key == pygame.K_KP5:
+                        password.join('5')
+                    elif event.key == pygame.K_6 or event.key == pygame.K_KP6:
+                        password.join('6')
+                    elif event.key == pygame.K_7 or event.key == pygame.K_KP7:
+                        password.join('7')
+                    elif event.key == pygame.K_8 or event.key == pygame.K_KP8:
+                        password.join('8')
+                    elif event.key == pygame.K_9 or event.key == pygame.K_KP9:
+                        password.join('9')
+                    elif event.key == pygame.K_q:
+                        password.join('q')
+                    elif event.key == pygame.K_w:
+                        password.join('w')
+                    elif event.key == pygame.K_e:
+                        password.join('e')
+                    elif event.key == pygame.K_r:
+                        password.join('r')
+                    elif event.key == pygame.K_t:
+                        password.join('t')
+                    elif event.key == pygame.K_y:
+                        password.join('y')
+                    elif event.key == pygame.K_u:
+                        password.join('u')
+                    elif event.key == pygame.K_i:
+                        password.join('i')
+                    elif event.key == pygame.K_o:
+                        password.join('o')
+                    elif event.key == pygame.K_p:
+                        password.join('p')
+                    elif event.key == pygame.K_a:
+                        password.join('a')
+                    elif event.key == pygame.K_s:
+                        password.join('s')
+                    elif event.key == pygame.K_d:
+                        password.join('d')
+                    elif event.key == pygame.K_f:
+                        password.join('f')
+                    elif event.key == pygame.K_g:
+                        password.join('g')
+                    elif event.key == pygame.K_h:
+                        password.join('h')
+                    elif event.key == pygame.K_j:
+                        password.join('j')
+                    elif event.key == pygame.K_k:
+                        password.join('k')
+                    elif event.key == pygame.K_l:
+                        password.join('l')
+                    elif event.key == pygame.K_z:
+                        password.join('z')
+                    elif event.key == pygame.K_x:
+                        password.join('x')
+                    elif event.key == pygame.K_c:
+                        password.join('c')
+                    elif event.key == pygame.K_v:
+                        password.join('v')
+                    elif event.key == pygame.K_b:
+                        password.join('b')
+                    elif event.key == pygame.K_n:
+                        password.join('n')
+                    elif event.key == pygame.K_m:
+                        password.join('m')
+                    elif event.key == pygame.K_UNDERSCORE:
+                        password.join('_')
+                    elif event.key == pygame.K_q and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('Q')
+                    elif event.key == pygame.K_w and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('W')
+                    elif event.key == pygame.K_e and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('E')
+                    elif event.key == pygame.K_r and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('R')
+                    elif event.key == pygame.K_t and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('T')
+                    elif event.key == pygame.K_y and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('Y')
+                    elif event.key == pygame.K_u and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('U')
+                    elif event.key == pygame.K_i and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('I')
+                    elif event.key == pygame.K_o and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('O')
+                    elif event.key == pygame.K_p and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('P')
+                    elif event.key == pygame.K_a and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('A')
+                    elif event.key == pygame.K_s and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('S')
+                    elif event.key == pygame.K_d and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('D')
+                    elif event.key == pygame.K_f and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('F')
+                    elif event.key == pygame.K_g and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('G')
+                    elif event.key == pygame.K_h and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('H')
+                    elif event.key == pygame.K_j and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('J')
+                    elif event.key == pygame.K_k and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('K')
+                    elif event.key == pygame.K_l and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('L')
+                    elif event.key == pygame.K_z and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('Z')
+                    elif event.key == pygame.K_x and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('X')
+                    elif event.key == pygame.K_c and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('C')
+                    elif event.key == pygame.K_v and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('V')
+                    elif event.key == pygame.K_b and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('B')
+                    elif event.key == pygame.K_n and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('N')
+                    elif event.key == pygame.K_m and event.key == pygame.K_LSHIFT or event.key == pygame.K_RSHIFT:
+                        password.join('M')
+                    elif event.key == pygame.K_BACKSPACE:
+                        password[-1]=''
+                    elif event.key == pygame.QUIT:
+                        pygame.quit()
+                        sys.exit()
+                    elif event.key == pygame.K_RETURN:
+                        return
