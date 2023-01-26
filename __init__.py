@@ -82,7 +82,7 @@ class Users:#创建玩家操作的类
                 "user_%d"{
                 "name":%s,
                 "password":%s,
-                }
+                }    
                 """%(int(num.read())+1,user_name,password)
             )
             num.write(num.read()+1)#将存储玩家总人数的文件中的整数+1
