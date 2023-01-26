@@ -14,3 +14,7 @@ tolerance the worst for future rise, \
 Three thousand of Yue Army could conquer Wu." \
 from "Self-encouragement Couplet" by Pu Songling.
 # Join us
+QQ:    77734470\
+\
+WeChat: mcmcmod\
+\
