@@ -1,6 +1,7 @@
 import sys
 import pygame.image #导入pygame图片模块
 import json
+from main import *
 class Card: #定义卡片类
     def __init__(self,img,x,y): #设置工具
         self.img=img
@@ -44,9 +45,7 @@ def Menu():#菜单
                 pygame.quit()#pygame模块关闭
                 sys.exit()#python系统关闭
                 return#返回
-def image_loads():#创建构建图片的方法
-    bg1 = pygame.image.load(r'.\image\background1.jpg')#创建变量来存储图片，但并不显示图片
-    re_bg=pygame.image.load(r'.\image\register_background.jpg')
+
 class Users:#创建玩家操作的类
     global login_bool#声明全局变量login_bool
     global register_bool#声明全局变量与register_bool
@@ -70,6 +69,7 @@ class Users:#创建玩家操作的类
         num = open(r'UserCount.', 'w+', encoding="UTF-8")#将玩家总人数的文件以w+模式，UTF-8编码打开
         json_path=r'User.json'#存储玩家信息的文件的路径
         json_file=open('User.json','a+',encoding="UTF-8")#以a+模式，UTF-8编码打开存储玩家信息的json文件
+        json_lib = dict(json.load(json_file))  # 将json文件转换为字典类型
         for i in range(0, num):#从下表0开始逐个遍历玩家信息的字典
             if user_name == json_lib["user_" + str(num)]["name"] and \
                     password == json_lib["user_" + str(num)]["password"]:#如果有玩家注册信息、注册密码与玩家信息库相匹配
@@ -370,11 +370,10 @@ class LO_RE:#创建登录类
                         user_name.join('m')
                     elif event.key == pygame.K_UNDERSCORE:# 这个是下划线
                         user_name.join('_')
-
-                    elif event.key == pygame.K_BACKSPACE:
+                    elif event.key == pygame.K_BACKSPACE:#删除键Backspace
                         user_name[-1]=''
                     elif event.key == pygame.QUIT:
                         pygame.quit()
                         sys.exit()
-                    elif event.key == pygame.K_RETURN:
+                    elif event.key == pygame.K_RETURN or event.key== pygame.K_TAB:#回车键和TAB键
                         LO_RE.LO_PASSWORD(self.password)
