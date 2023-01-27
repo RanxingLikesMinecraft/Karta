@@ -1,5 +1,5 @@
 # Karta
-A card game but not complete yet.\
+**A card game but not complete yet.**\
 一个尚未完成的游戏
 # About Diamenty 关于Diamenty团队 
 We are just some student in Grade Seven with some whimsical ideas.\
@@ -10,21 +10,21 @@ We have our dream and pursuit.\
 我们有着我们的梦想与追求\
 We believe that \
 我们一直坚信:\
-"Where there is a will there is a way,\
+_"Where there is a will there is a way,_\
 "有志者事竟成,\
-break the caldrons and sink the boats, \
+_break the caldrons and sink the boats,_ \
 破釜沉舟,\
-hundreds of Qing's belong to Chu eventually, \
+_hundreds of Qing's belong to Chu eventually,_ \
 百二秦关终属楚;\
-God never ingore hardworking man, \
+_God never ingore hardworking man,_\
 苦心人天不负,\
-tolerance the worst for future rise, \
+_tolerance the worst for future rise,_ \
 卧薪尝胆,\
-Three thousand of Yue Army could conquer Wu." \
+_Three thousand of Yue Army could conquer Wu."_ \
 三千越甲可吞吴。\
-from "Self-encouragement Couplet" by Pu Songling.\
+from _"Self-encouragement Couplet"_ by Pu Songling.\
 选自蒲松龄《自勉联》
 # Join us 加入我们
-QQ:          \
+**QQ: 77734470**         \
 \
-WeChat: mcmcmod
+**WeChat: mcmcmod**
