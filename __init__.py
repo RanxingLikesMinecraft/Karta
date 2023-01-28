@@ -2,68 +2,33 @@ import sys
 import pygame.image #导入pygame图片模块
 import json
 from main import *
-class Card: #定义卡片类
+class Card(): #定义卡片类
     def __init__(self,img,x,y): #设置工具
         self.img=img
         self.x=x
         self.y=y
-    def write(self,img,x,y): #构建显示卡片的方法
-        screen.blit(pygame.image.load(img),(x,y)) #在(x,y)的地方显示卡片
+    def write(self): #构建显示卡片的方法
+        screen.blit(pygame.image.load(self.img),(self.x,self.y)) #在(x,y)的地方显示卡片
 @Card#对Card函数使用装饰器
-class Card_Package: #定义卡片仓库
-    global card_list #声明全局变量card_list，即玩家所拥有的卡片
-    def __init__(self,x,y): #构建工具
-        self.x=x
-        self.y=y
-    def write(self,x,y): #构建显示卡片的方法
-        for i in card_list: #循环遍历card_list并将每一项的值赋值给变量i
-            img=pygame.image.load(i) #将显示卡片i的构造方法赋值给变量img
-            if(x> ):#卡牌换行显示
-                x=#卡牌显示在下一行第一个
-                y+=#卡牌距离(上下)+卡牌的y长度
-            screen.blit(img,(x,y)) #显示卡片在(x,y)
-            x+=#卡牌的距离(左右)+卡牌的x长度
-@Card_Package#对Card_Package函数使用装饰器
-class Person:#定义角色
-    def __init__(self,img,x,y):#创建构造方法
-        self.img=img
-        self.x=x
-        self.y=y
-    def write(self,img,x,y):#创建显示图片的方法
-        screen.blit(pygame.image.load(img),(x,y))#在(x,y)的地方显示图片
-def Menu():#菜单
-    while True:#死循环
-        for event in pygame.event.get():#获取事件监听
-            if event.type==pygame.MOUSEBUTTONDOWN:#如果按下鼠标
-                x,y=pygame.mouse.get_pos()#获取鼠标位置
-                "将各个菜单上的按键的位置与鼠标按下的位置进行匹配"
-                if
-                elif
-            elif event.type==pygame.KEYDOWN and event.key==pygame.K_ESCAPE:#如果按下了esc键
-                return#返回
-            elif event.type==pygame.QUIT:#如果按下了退出
-                pygame.quit()#pygame模块关闭
-                sys.exit()#python系统关闭
-                return#返回
 
-class Users:#创建玩家操作的类
+class Users():#创建玩家操作的类
     global login_bool#声明全局变量login_bool
     global register_bool#声明全局变量与register_bool
     def __init__(self,user_name,password):#创建构造方法
         self.user_name=user_name#玩家姓名
         self.password=password#登录密码
-    def login(self,user_name,password):#构建登录函数
+    def login(self):#构建登录函数
         json_path = r'User.json'#获取所有玩家登录信息
         num=open(r'UserCount.','w+',encoding="UTF-8")#获取登录的总玩家数
         json_file = open('User.json', 'a+', encoding="UTF-8")#打开玩家信息，用a+模式，UTF-8编码
         json_lib = dict(json.load(json_file))#将json文件转换为字典类型
         for i in range(0,num):#从下表0开始一直到最后一个玩家逐个遍历
-            if user_name==json_lib["user_"+str(num)]["name"] and \
-                password == json_lib["user_"+str(num)]["password"]:#如果输入的玩家姓名与登录密码相匹配
+            if self.user_name==json_lib["user_"+str(num)]["name"] and \
+                self.password == json_lib["user_"+str(num)]["password"]:#如果输入的玩家姓名与登录密码相匹配
                 login_bool=True#则允许登录
                 return
         login_bool=False#拒绝登录
-    def register(self,user_name,password):#构建注册函数
+    def register(self):#构建注册函数
         global re_bg
         pygame.image.load(re_bg,(0,0))#加载注册界面的背景图片
         num = open(r'UserCount.', 'w+', encoding="UTF-8")#将玩家总人数的文件以w+模式，UTF-8编码打开
@@ -71,8 +36,8 @@ class Users:#创建玩家操作的类
         json_file=open('User.json','a+',encoding="UTF-8")#以a+模式，UTF-8编码打开存储玩家信息的json文件
         json_lib = dict(json.load(json_file))  # 将json文件转换为字典类型
         for i in range(0, num):#从下表0开始逐个遍历玩家信息的字典
-            if user_name == json_lib["user_" + str(num)]["name"] and \
-                    password == json_lib["user_" + str(num)]["password"]:#如果有玩家注册信息、注册密码与玩家信息库相匹配
+            if self.user_name == json_lib["user_" + str(num)]["name"] and \
+                    self.password == json_lib["user_" + str(num)]["password"]:#如果有玩家注册信息、注册密码与玩家信息库相匹配
                 register_bool=False#拒绝注册
                 return#返回
             register_bool = True#允许注册
@@ -83,14 +48,11 @@ class Users:#创建玩家操作的类
                 "name":%s,
                 "password":%s,
                 }    
-                """%(int(num.read())+1,user_name,password)
+                """%(int(num.read())+1,self.user_name,self.password)
             )
             num.write(num.read()+1)#将存储玩家总人数的文件中的整数+1
-        else:#否则
-            "询问玩家是否进入登录界面"
-            Users.login(user_name,password)#将玩家送入登录界面
-            return#返回
-class LO_RE:#创建登录类
+
+class Lo_Re():#创建登录类
     def __init__(self,user_name,password):#创建构造方法
         self.user_name=user_name#形参user_name是将要存储的用户名
         self.password=password#形参password是将要存储的密码
@@ -376,4 +338,5 @@ class LO_RE:#创建登录类
                         pygame.quit()
                         sys.exit()
                     elif event.key == pygame.K_RETURN or event.key== pygame.K_TAB:#回车键和TAB键
-                        LO_RE.LO_PASSWORD(self.password)
+                        L_R_pass=True
+                        return
